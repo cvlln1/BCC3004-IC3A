@@ -1,4 +1,4 @@
-package DesignPatterns_SE.Estrutural;
+package Estrutural;
 
 // Cenário: Ligar um computador (esconder a complexidade do hardware)
 // Problema: O usuário não quer saber a ordem técnica de inicialização dos componentes.
