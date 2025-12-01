@@ -1,4 +1,4 @@
-# Design Patterns: Gambiarras que todo mundo faz, oq faz não ser mais uma gambiarra
+# Design Patterns: Gambiarras que todos fazem, o que as tornam um padrão
 
 Este repositório apresenta implementações pequenas de três Design Patterns essenciais: Criacional, Estrutural e Comportamental.
 
@@ -21,9 +21,23 @@ Implementamos a classe GameSettings definindo seu construtor como private, o que
 
 -----
 
+## 2. Padrão Estrutural: Facade
+
+### O Padrão
+O design **Facade** fornece uma interface simplificada para uma biblioteca, um framework ou um conjunto complexo de classes.
+
+### O Problema (Inicializar de Computador)
+Ligar um computador envolve uma sequência complexa: a CPU precisa congelar, a memória RAM precisa ser carregada, o disco rígido precisa ser lido... Um usuário não quer chamar cpu.freeze(), ram.load(), hd.read(), ele quer apenas apertar o botão "ligar".*
+
+### A Solução (/Estrutural/ComputerSystem.java)
+Criamos uma classe ComputerFacade que encapsula as instâncias de lógicas complexas (CPU, Memory e HardDrive). Esta fachada expõe apenas um método simplificado ao usuário, o startComputer(), que internamente manipula as chamadas técnicas na ordem correta (congelar CPU, ler HD, carregar RAM), isolando o cliente da complexidade de inicialização do hardware.
+
+----
+
 ## Como executar
 Como os arquivos contêm métodos main individuais para demonstração, compile e rode cada um separadamente:
 
 ```bash
     javac GameConfig.java && java GameConfig
+    javac ComputerSystem.java && java ComputerSystem
 ```
