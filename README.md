@@ -34,10 +34,25 @@ Criamos uma classe ComputerFacade que encapsula as instâncias de lógicas compl
 
 ----
 
+
+## 3. Padrão Comportamental: Strategy
+
+### O Padrão
+O design **Strategy** permite que você defina uma família de algoritmos, coloque-os em classes separadas e faça os objetos deles intercambiáveis.
+
+### O Problema (Exportar de Texto)
+Imagine um editor de texto. O usuário digita algo e quer "Salvar". Ele pode querer salvar como .txt (padrão), como .json (formatado) ou .xml. Em vez de fazer um if (tipo == "json") gigante, criamos estratégias de exportação
+
+### A Solução (/Comportalmental/TextExport.java)
+Definimos uma interface comum ExportStrategy e criamos classes separadas para cada algoritmo de formatação (JsonExportStrategy, XmlExportStrategy e PainTextExportStrategy). A classe principal TextEditor deixa de conter a lógica de salvamento e passa a ter um campo do tipo da interface, delegando a execução para a estratégia configurada, Isso faz com que seja possível alterar o formato de exportação durante a execução do editor sem modificar o código dele.
+
+----
+
 ## Como executar
 Como os arquivos contêm métodos main individuais para demonstração, compile e rode cada um separadamente:
 
 ```bash
     javac GameConfig.java && java GameConfig
     javac ComputerSystem.java && java ComputerSystem
+    javac TextExport.java && java TextExport
 ```
